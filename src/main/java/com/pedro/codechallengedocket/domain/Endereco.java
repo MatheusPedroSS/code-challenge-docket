@@ -34,6 +34,10 @@ public class Endereco implements Serializable {
         this.cep = cep;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getLogradouro() {
         return logradouro;
     }
