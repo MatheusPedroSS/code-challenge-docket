@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Cadastro Cartorio</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            #bar nav {
+                width: 100%;
+                display: flex;
+                position: fixed;
+                background-color: #00ff;
+                z-index: 99;
+            }
+            #bar nav a {
+                color: #fff;
+                margin: auto 20px auto 40px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            #bar nav li {
+                float: left;
+                list-style: none;
+                margin-left: 20px;
+            }
+            #certidoes {
+                display: flex;
+                justify-content: space-around;
+                padding-top: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bar">
+            <nav>
+                <a href="/">Inicio</a>
+                <ul>
+                    <li><a href="/cadastro-cartorio">Cadastro Cartorio</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="certidoes">
+            <table>
+                <tr th:each = "certidao : ${certidoes}">
+                    <td th:text = "${certidoes.nome}"></td>
+                    <td><a href="/view-certidoes">Visualizar</a></td>
+                    <td>Alterar</td>
+                    <td>Excluir</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

@@ -37,4 +37,8 @@ public class CertidaoService {
             throw new RuntimeException("Não e possivel excluir um cartorio que contenha endereços!");
         }
     }
+
+    public Iterable<Certidao> findAll() {
+        return repository.findAll();
+    }
 }
