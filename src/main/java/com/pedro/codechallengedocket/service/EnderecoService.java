@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import com.pedro.codechallengedocket.domain.Endereco;
 import com.pedro.codechallengedocket.repository.EnderecoRepository;
+import com.pedro.codechallengedocket.service.exception.DataIntegrityException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -21,7 +22,11 @@ public class EnderecoService {
     }
 
     public Endereco insert(Endereco endereco) {
-        return repository.save(endereco);
+        try{
+            return repository.save(endereco);
+        } catch (DataIntegrityViolationException e) {
+            throw new DataIntegrityException("Não pode ser registrado mais de um cartorio no mesmo endereço");
+        }
     }
 
     public Endereco update(Endereco endereco) {
