@@ -1,5 +1,6 @@
 package com.pedro.codechallengedocket.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.pedro.codechallengedocket.domain.Cartorio;
@@ -38,7 +39,7 @@ public class CartorioService {
         }
     }
 
-    public Iterable<Cartorio> findAll() {
+    public List<Cartorio> findAll() {
         return repository.findAll();
     }
 }
