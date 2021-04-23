@@ -1,7 +1,9 @@
 package com.pedro.codechallengedocket.service;
 
+import java.util.List;
 import java.util.Optional;
 
+import com.pedro.codechallengedocket.domain.Cartorio;
 import com.pedro.codechallengedocket.domain.Certidao;
 import com.pedro.codechallengedocket.repository.CertidaoRepository;
 
@@ -38,7 +40,11 @@ public class CertidaoService {
         }
     }
 
-    public Iterable<Certidao> findAll() {
+    public List<Certidao> findAll() {
         return repository.findAll();
+    }
+
+    public List<Certidao> findByCartorio(Cartorio cartorio) {
+        return repository.findByCartorio(cartorio);
     }
 }

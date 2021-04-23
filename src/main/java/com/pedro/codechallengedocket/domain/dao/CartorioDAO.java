@@ -16,11 +16,22 @@ public class CartorioDAO {
         this.endereco = new Endereco(endereco.getLogradouro(), endereco.getNumero(),
             endereco.getBairro(), endereco.getCidade(), endereco.getEstado(), endereco.getCep());
     }
+    
+    public CartorioDAO(Integer id, String nome, Endereco endereco) {
+        this.id = id;
+        this.nome = nome;
+        this.endereco = new Endereco(endereco.getLogradouro(), endereco.getNumero(),
+            endereco.getBairro(), endereco.getCidade(), endereco.getEstado(), endereco.getCep());
+    }
 
     public Cartorio daoToClass() {
         Cartorio cartorio = new Cartorio(nome);
         cartorio.setEndereco(endereco);
         return cartorio;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getId() {

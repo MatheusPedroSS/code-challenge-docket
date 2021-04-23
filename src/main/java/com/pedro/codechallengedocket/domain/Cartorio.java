@@ -27,6 +27,11 @@ public class Cartorio implements Serializable {
         this.nome = nome;
     }
 
+    public Cartorio(Integer id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
     public Integer getId() {
         return id;
     }
